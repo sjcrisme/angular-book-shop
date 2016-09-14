@@ -12,12 +12,11 @@
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.css"/>
     <link rel="stylesheet" href="app.css"/>
   </head>
-  <body  ng-cloak="">
+  <body layout="column" ng-controller="sideNavController as contr"  layout="row" ng-cloak="">
 
-    <md-content>
       <md-toolbar class="md-hue-2">
         <div class="md-toolbar-tools">
-          <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
+          <md-button class="md-icon-button" hide-gt-sm aria-label="Settings" ng-click="contr.openLeftMenu()">
             <md-icon md-svg-icon="img/ico/ic_menu_white_24px.svg"></md-icon>
           </md-button>
           <h2>
@@ -29,10 +28,32 @@
             <md-icon md-svg-icon="img/ico/ic_local_grocery_store_white_24px.svg"></md-icon>
           </md-button>
           100 (USD)
+          <span flex=""></span>
         </div>
       </md-toolbar>
-    <md-content>
 
+      <div id="sideNavContainer">
+         <md-sidenav md-component-id="left" class="md-sidenav-left"> <!-- left block -->
+           <md-list flex>
+              <md-subheader class="md-no-sticky">Left bar</md-subheader>
+                  this is left bar<br>
+                  this is left bar<br>
+                  this is left bar<br>
+                  this is left bar<br>
+                  this is left bar<br>
+<br>
+                  this is left bar<br>
+                  this is left bar<br>
+                  this is left bar<br>
+             
+           </md-list> <!-- end flex -->
+         </md-sidenav> <!--//end left block -->
+
+         <md-content> <!-- main -->
+           This is main block 
+            <md-button ng-click="contr.openLeftMenu()">Open ShopCart</md-button>
+         </md-content> <!-- //end main -->
+      </div>
 
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
@@ -42,5 +63,6 @@
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     
     <script src="app.js"></script>
+    <script src="site-manager/site-manager.component.js"></script>
   </body>
 </html>
