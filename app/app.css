@@ -8,3 +8,11 @@ html, body {
 .md-list{
     padding-top: 0px;
 }
+
+#toaster {
+  position: fixed;
+  top: 56px;
+  height: 66px;
+  right: 0;
+  width: 50%;
+}

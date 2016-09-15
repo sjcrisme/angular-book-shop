@@ -24,16 +24,18 @@
           </h2>
           <span flex=""></span>
           
-          <md-button class="md-icon-button" aria-label="More">
+          <md-button class="md-icon-button" aria-label="More" ng-click="contr.showActionToast()">
             <md-icon md-svg-icon="img/ico/ic_local_grocery_store_white_24px.svg"></md-icon>
           </md-button>
-          100 (USD)
+          {{contr.priceInCart}} (USD)
           <span flex=""></span>
         </div>
+        <div id="toaster" ng-cloak=""></div>        
       </md-toolbar>
 
       <div id="sideNavContainer">
          <md-sidenav md-component-id="left" class="md-sidenav-left"> <!-- left block -->
+          <md-subheader class="md-no-sticky">{{contr.priceInCart}} line item (with hover)</md-subheader>
            <md-list flex>
               <md-subheader class="md-no-sticky">Left bar</md-subheader>
                   this is left bar<br>
@@ -45,11 +47,11 @@
                   this is left bar<br>
                   this is left bar<br>
                   this is left bar<br>
-             
+                   <md-button ng-click="contr.testButton()">+</md-button>
            </md-list> <!-- end flex -->
          </md-sidenav> <!--//end left block -->
 
-         <md-content> <!-- main -->
+         <md-content > <!-- main -->
            This is main block 
             <md-button ng-click="contr.openLeftMenu()">Open ShopCart</md-button>
          </md-content> <!-- //end main -->
