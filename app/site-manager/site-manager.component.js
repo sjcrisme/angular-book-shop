@@ -21,7 +21,7 @@
         .action('UNDO')
         .highlightAction(true)
         .highlightClass('md-accent')// Accent is used by default, this just demonstrates the usage.
-        .parent(document.querySelectorAll('#toaster'))
+        .parent(document.querySelectorAll('div#sideNavContainer > md-content'))
         .position('top right');
 
         $mdToast.show(toast).then(function(response) {

@@ -2,7 +2,8 @@
 
 angular.module('MyApp', [
     'ngMaterial',
-    'siteManager'
+    'siteManager',
+    'bookPage',
  ]).config(function($mdThemingProvider) {
    $mdThemingProvider
             .theme('default')
