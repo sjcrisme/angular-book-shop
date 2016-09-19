@@ -2,6 +2,7 @@
 
 angular.module('MyApp', [
     'ngMaterial',
+    'core',
     'siteManager',
     'bookPage',
  ]).config(function($mdThemingProvider) {

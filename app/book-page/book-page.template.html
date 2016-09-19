@@ -1,5 +1,44 @@
-<div style="border:1px solid grey;width:200px;">
-    <h3> Hello form component template</h3>
+<div class = "book-page">
+    <h3> Table of products </h3>
+
+  <div class="container" >
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th><a href="#" ng-click="sortType = 'id';sortReverse = !sortReverse">
+            ID 
+            <span ng-show="sortType == 'id'" class="fa fa-caret-down"></span>
+          </a>
+        </th>
+        <th></th>
+        <th><a href="#" ng-click="sortType = 'name';sortReverse = !sortReverse">
+            Name 
+            <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-down"></span>
+            <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up"></span>
+          </a>
+        </th>
+        <th>Description</th>
+        <th>
+          <a href="#" ng-click="sortType = 'price';sortReverse = !sortReverse">
+            Price 
+            <span ng-show="sortType == 'price' && !sortReverse" class="fa fa-caret-down"></span>
+            <span ng-show="sortType == 'price' && sortReverse" class="fa fa-caret-up"></span>
+          </a>
+          </th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="book in bookObj.drupalbooks | orderBy:sortType:sortReverse">
+            <td>{{book.id}}</td>
+            <td><img ng-src="img/{{book.img}}" alt="{{ book.name }}" height="100px" ng-click="bookObj.openBook($event,book)" /></td>
+            <td><a href="#!/book/{{book.id}}">{{ book.name }}</a> </td>
+            <td style="width:300px;">{{ book.description }}</td>
+            <td style="width:70px;text-align: center;">{{ book.price }}</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
     <div style="border:1px solid grey;width:180px;">
         {{myctrl.text}} -- v  
         <p ng-transclude></p>

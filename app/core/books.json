@@ -1,0 +1,111 @@
+[
+ {
+    "id":1,
+    "name":"Drupal For Dummies",
+    "img":"drupal-dummies-1.png",
+    "description": "Drupal For Dummies is the book tailor-made for Drupal beginners that Drupal guru Lynn Beighley and Seamus teach them the fast, fun, and easy way to get started with Drupal",
+    "price":10
+ },{
+    "id":2,
+    "name":"Drupal Search Engine Optimization",
+    "img":"drupal-SEO.png",
+    "description":"Since SEO is an on-going process, and it is quite important to a Drupal site, Drupal Search Engine Optimization will take a hands-on approach to the process",
+    "price":15
+ },{
+    "id":3,
+    "name":"Pro Drupal 7 Development",
+    "img":"pro-drupal-7-dev.png",
+    "description":"All those webmasters who are deep into Drupal development, this book is must to be read. Drupal site creation with basic features and tool, security settings",
+    "price":10
+ },{
+     "id":4,
+     "name":"High Performance Drupal: Fast and Scalable Designs",
+     "img":"drupal-high-perf.png",
+     "description":"Covering Drupal versions 7 and 8, High Performance Drupal: Fast and Scalable Design provides helpful guidance of best practices, examples",
+     "price":11
+
+ },{
+    "id":5,
+     "name":"Drupal 7 Themes",
+     "img":"drupal7-Themes.png",
+     "description": "Drupal 7 Themes is great introduction to theming with Drupal 7. For people who intend to create a brand new look for their Drupal websites, this book is perfect for them",
+     "price":13
+ },
+ {
+  "id":6,
+  "name":"Drupal 7 Module Development",
+  "img":"drupal7-module-dev.png",
+  "description":"Drupal 7 Module Development brings both Drupal users and PHP developers complete knowledge of accessible and functional coding samples",
+  "price":10
+ },
+ {
+     "id":7,
+     "name":"Drupal 7 bible",
+     "img":"drupal7 bible.jpg",
+     "description":"Focused on site-building, with in-depth coverage of several contributed modules, including Views and and Ubercart. With over 740 pages, this book really lives up to its 'Bible' moniker.",
+     "price":8
+ },
+ {
+     "id":8,
+     "name":"Foundation Drupal 7",
+     "img":"foundationdrupal7.jpg",
+     "description":"A hands-on approach to Drupal for webmasters looking to get more familiar with the CMS, with an emphasis on reducing time-to-launch. Covers integrating Drupal into your existing designs, managing multi-site configurations, and administering your server with cPanel.",
+     "price":13
+ },
+ {
+     "id":9,
+     "name":"Drupal 7 Visual Quickstart Guide",
+     "img":"Drupal7Visual_Quickstart.jpg",
+     "description":"Plenty of screenshots and step-by-step instructions. This book is mainly focused on the installation, configuration, and management of Drupal sites.",
+     "price":21
+ },
+ {
+    "id":10,
+    "name":"Drupal 7 First Look",
+    "img":"drupalFirstLook.jpg",
+    "description": "For those already familiar with Drupal 6, this book is designed to help you upgrade to Drupal 7. Covers the new administration interface, Drupal 7's API changes, and introduces the new DBTNG database abstraction layer.",
+    "price":13   
+ },
+ {
+   "id":11,
+   "name":"Drupal 7 Theming Cookbook",
+   "img":"drupal-7-theming-cookbook.jpg",
+   "description":"Over 100 recipes that cover all aspects of customizing and developing unique Drupal themes. Spice up your Drupal themes A complete update for Drupal 7, with added information for the Field API, Views, and Panels Part of Packt's Cookbook series with lots of practical recipes for solving the most common theming problems",
+   "price":7
+ },
+ {
+   "id":12,
+   "name":"Drupal Web Services",
+   "img":"DrupalWebServices-150.jpg",
+   "description":"This book covers efficient Drupal Web services that help you to speed up your connections to Web applications. It will compel you to learn more and more about Web services and use them to easily share data and content resources between different applications and machines. ",
+   "price":7
+ },
+ {
+   "id":13,
+   "name":"Drupal 7 Webform Cookbook",
+   "img":"1849516480-drupal-7-webform-cookbook.jpg",
+   "description":"Over 100 recipes for exploiting one of Drupal's more popular contributed modules",
+   "price":11
+ },
+ {
+   "id":14,
+   "name":"Selling Online with Drupal e-Commerce",
+   "img":"1847194060-selling-online-with-drupal-e-commerce.jpg",
+   "description":"This book will show you how to sell online using the award-winning open-source Drupal web application. No prior experience of Drupal is required; you will learn all you need as you step through the creation of an online shop. You will learn the basics of Drupal, and see how to use  the standard features of Drupal to begin construction of an online shop",
+   "price":15
+ },
+ {
+   "id":15,
+   "name":"Drupal 7 Multi Sites Configuration",
+   "img":"8000OS_ Drupal Multi Sites Configuration.jpg",
+   "description":"Prepare your server for hosting multiple sites. Configure and install several sites on one instance of Drupal. Manage and share themes and modules across the multi-site configuration. Use the hashtag #PacktDrupalMS on Twitter to discuss the book with the author, fellow readers, and Packt.",
+   "price":12
+ },
+ {
+   "id":16,
+   "name":"Mapping with Drupal",
+   "img":"1449308945-mapping-with-drupal.jpg",
+   "description":"Build beautiful interactive maps on your Drupal website, and tell engaging visual stories with your data. This concise guide shows you how to create custom geographical maps from top to bottom, using Drupal 7 tools and out-of-the-box modules.",
+   "price":9
+ }
+]

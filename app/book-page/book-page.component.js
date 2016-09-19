@@ -4,9 +4,12 @@
 
 function bookPage(){
 
-  function bookpageController(){
+  bookpageController.$inject = ['AllBooks'];
+  function bookpageController(AllBooks){
+    
     var vm = this;
     vm.text = " AAA AAA A ";
+    vm.drupalbooks = AllBooks.query();
     }
 
     return {
@@ -15,13 +18,11 @@ function bookPage(){
     //  template:"<div>BOOK PAGE module</b> >>> {{myctrl.text}} --  <p ng-transclude></p></div>",
       templateUrl:'/book-page/book-page.template.html',
       controller: bookpageController,
-      controllerAs:'myctrl'
+      controllerAs:'bookObj'
     }
 }
 
-
-
-angular.module('bookPage',[])
+angular.module('bookPage',['core'])
 .component('bookPage',bookPage());
  //   .controller('bookpageController', bookpageController);
 
