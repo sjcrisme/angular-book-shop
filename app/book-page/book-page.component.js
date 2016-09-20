@@ -6,11 +6,39 @@ function bookPage(){
 
   bookpageController.$inject = ['AllBooks'];
   function bookpageController(AllBooks){
-    
+
     var vm = this;
-    vm.text = " AAA AAA A ";
-    vm.drupalbooks = AllBooks.query();
-    }
+    vm.pageSize = 5;
+    vm.pageStart = 1;
+
+    AllBooks.query(function(data){
+      var i;
+      vm.drupalbooks = data;
+      vm.numberOfPages = Math.ceil(data.length/vm.pageSize);
+      vm.currentPage = 1;
+     // console.log("number of pages: "+vm.numberOfPages);
+
+      vm.goPage = function(index){
+        vm.currentPage = 1;
+        if(index != 0){
+          vm.currentPage = index;
+        }
+        console.log("index: "+ index);
+        
+        vm.drupalbooks = data.slice(index);
+      }                
+    });
+    ///////   console.log(">>"+vm.currentPage);
+    
+   //// vm.drupalbooks = AllBooks.query();
+    //m.drupalbooks.$promise.then(function(respond){ console.log(respond); })
+
+   /// console.log(vm.drupalbooks.then);
+ //   debugger;
+ 
+   // 
+   vm.currentPage = 0;
+     }
 
     return {
       replace:true,
@@ -24,6 +52,4 @@ function bookPage(){
 
 angular.module('bookPage',['core'])
 .component('bookPage',bookPage());
- //   .controller('bookpageController', bookpageController);
-
  })();
