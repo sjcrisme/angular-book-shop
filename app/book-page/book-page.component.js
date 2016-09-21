@@ -37,10 +37,10 @@ function bookPage(){
 //
      vm.currentPage = 0;
 //
-          vm.showActionToast = function(name) {
+          vm.showActionToast = function(name,price) {
 
             var toast = $mdToast.simple()
-              .textContent('You just add book: '+ name)
+              .textContent(name + ' + ' + price + ' USD')
               .action('UNDO')
               .highlightAction(true)
               .highlightClass('md-accent')// Accent is used by default, this just demonstrates the usage.
@@ -74,7 +74,7 @@ function bookPage(){
                          price:this.book.price
                      });
                      $mdDialog.hide(answer);
-                     vm.showActionToast(book.name);
+                     vm.showActionToast(book.name,book.price);
                  }
                  vmDialog.answer = function(answer) {
            //          console.log('> '+ answer);
