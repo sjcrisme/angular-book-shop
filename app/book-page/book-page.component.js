@@ -9,34 +9,32 @@ function bookPage(){
 
     var vm = this;
     vm.pageSize = 5;
-    vm.pageStart = 1;
 
     AllBooks.query(function(data){
-      var i;
-      vm.drupalbooks = data;
-      vm.numberOfPages = Math.ceil(data.length/vm.pageSize);
-      vm.currentPage = 1;
-     // console.log("number of pages: "+vm.numberOfPages);
 
+      vm.drupalbooks = data;
+      vm.drupalbooksPager = data;
+      vm.numberOfPages = Math.ceil(data.length/vm.pageSize);
+      vm.currentPage = 0;
+     
       vm.goPage = function(index){
-        vm.currentPage = 1;
+
+        vm.pageStart = 0;
+        vm.currentPage = 0;
         if(index != 0){
           vm.currentPage = index;
         }
-        console.log("index: "+ index);
-        
-        vm.drupalbooks = data.slice(index);
+        vm.pageStart = index*vm.pageSize;
+        vm.drupalbooks = data.slice(vm.pageStart);
       }                
     });
-    ///////   console.log(">>"+vm.currentPage);
-    
+   
    //// vm.drupalbooks = AllBooks.query();
     //m.drupalbooks.$promise.then(function(respond){ console.log(respond); })
 
    /// console.log(vm.drupalbooks.then);
  //   debugger;
- 
-   // 
+//
    vm.currentPage = 0;
      }
 
