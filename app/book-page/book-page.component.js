@@ -4,8 +4,8 @@
 
 function bookPage(){
 
-  bookpageController.$inject = ['AllBooks'];
-  function bookpageController(AllBooks){
+  bookpageController.$inject = ['AllBooks','$mdDialog','ShopCart','$mdToast'];
+  function bookpageController(AllBooks,$mdDialog,ShopCart,$mdToast){
 
     var vm = this;
     vm.pageSize = 5;
@@ -35,8 +35,68 @@ function bookPage(){
    /// console.log(vm.drupalbooks.then);
  //   debugger;
 //
-   vm.currentPage = 0;
-     }
+     vm.currentPage = 0;
+//
+          vm.showActionToast = function(name) {
+
+            var toast = $mdToast.simple()
+              .textContent('You just add book: '+ name)
+              .action('UNDO')
+              .highlightAction(true)
+              .highlightClass('md-accent')// Accent is used by default, this just demonstrates the usage.
+              .parent(document.getElementById('toasterplace'))
+              .position('top right');
+
+              $mdToast.show(toast).then(function(response) {
+                if ( response == 'ok' ) {
+                  console.log('You clicked the \'UNDO\' action.');
+                }
+              });
+          };
+//
+          vm.closeToast = function() {
+            $mdToast.hide();
+          }
+          //
+         vm.openBook = function(ev,book){
+           DialogController.$inject = ['$mdDialog','locals','ShopCart'];
+           function DialogController($mdDialog,locals,ShopCart) {
+                 var vmDialog = this;
+                 vmDialog.book = locals.book;
+
+                 vmDialog.closeDialog = function(answer) {
+                     ShopCart.addBook({
+                         id:this.book.id,
+                         name:this.book.name,
+                         desc:this.book.description,
+                         img:this.book.img,
+                         countThisBook:1,
+                         price:this.book.price
+                     });
+                     $mdDialog.hide(answer);
+                     vm.showActionToast(book.name);
+                 }
+                 vmDialog.answer = function(answer) {
+           //          console.log('> '+ answer);
+                     $mdDialog.hide(answer);
+                 }
+            }
+            $mdDialog.show({
+                 clickOutsideToClose: true,
+                 preserveScope: true,  // do not forget this if use parent scope
+                 templateUrl: 'book-page/BookDialog.tmpl.html',
+                 controller: DialogController,
+                 controllerAs:'vmDialog',
+                 locals:{book:book},
+                 parent: angular.element(document.body),
+                 targetEvent: ev
+            }).then(function(answer) {
+                    vm.status = 'Last added to shopcart book: "' + answer + '".';
+             }, function() {
+                    vm.status = 'You cancelled the dialog.';
+            });
+        }
+    }
 
     return {
       replace:true,

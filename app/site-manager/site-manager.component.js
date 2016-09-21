@@ -1,6 +1,6 @@
 'use strict';
 
-  function sideNavController($mdSidenav,$mdToast){
+  function sideNavController($mdSidenav){
     var vm = this;
 
     vm.priceInCart = 100;
@@ -14,14 +14,14 @@
     }
 
     //
-    vm.showActionToast = function() {
+ /*   vm.showActionToast = function() {
 
       var toast = $mdToast.simple()
         .textContent('You just add book "Drupal How to"')
         .action('UNDO')
         .highlightAction(true)
         .highlightClass('md-accent')// Accent is used by default, this just demonstrates the usage.
-        .parent(document.querySelectorAll('div#sideNavContainer > md-content'))
+        .parent(document.getElementById('toasterplace'))
         .position('top right');
 
         $mdToast.show(toast).then(function(response) {
@@ -33,7 +33,7 @@
 
     vm.closeToast = function() {
       $mdToast.hide();
-    };
+    };*/
   }
     
 angular.module('siteManager',[])

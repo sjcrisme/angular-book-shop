@@ -14,3 +14,11 @@ html, body {
 .book-page th{
   padding-left: 10px;
 }
+.book-page tr{
+  border-bottom: 2px solid blue;
+  padding-bottom: 2px;
+}
+
+.md-toast {
+        background-color: green;
+}

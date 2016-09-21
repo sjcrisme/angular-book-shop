@@ -1,0 +1,35 @@
+<md-dialog aria-label="Open Book">
+  <form ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>{{vmDialog.book.name}}</h2>
+        <span flex></span>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        
+         <img ng-src="img/{{vmDialog.book.img}}" style="float:left;">
+         <br>
+          <p style="padding-left: 100px;margin-left: 120px;">
+          {{vmDialog.book.description}}
+
+          <br>
+          <label><b>Price in {{ vmDialog.book.price}} (USD)</b></label>          
+        </p>
+      </div>
+       
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <span flex></span>
+       <md-button ng-click="vmDialog.closeDialog(vmDialog.book.id)">
+       add to cart
+      </md-button>
+      <md-button ng-click="vmDialog.answer('none')">
+      canсel
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
