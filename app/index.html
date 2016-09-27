@@ -35,9 +35,9 @@
 
       <div id="sideNavContainer">
          <md-sidenav md-component-id="left" class="md-sidenav-left"> <!-- left block -->
-          <md-subheader class="md-no-sticky">{{contr.getTotal()}} line item (with hover)</md-subheader>
+          <md-subheader class="md-no-sticky">{{contr.getTotal()}} line item ShopCart</md-subheader>
            <md-list flex>
-              <md-subheader class="md-no-sticky">Left bar</md-subheader>
+              <md-subheader class="md-no-sticky">Basket</md-subheader>
               <!-- -->
                 <md-list-item class="md-3-line" ng-repeat="book in contr.getBooks() track by book.id" >
                   <img ng-src="img/{{book.img}}?{{$index}}" class="md-avatar" alt="{{book.name}}" ng-click="null" />
@@ -54,7 +54,7 @@
                   </div>
 
               </md-list-item>
-                   <md-button ng-click="contr.testButton()">+</md-button>
+                   <md-button class="md-raised md-primary" ng-click="contr.testButton()" style="padding-left:5px;">Checkout</md-button>
            </md-list> <!-- end flex -->
          </md-sidenav> <!--//end left block -->
 

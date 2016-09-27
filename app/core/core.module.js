@@ -52,7 +52,6 @@ app.factory('AllBooks', ['$resource',
                 this.tottal = this.tottal + this.array_elements[last].price;
             }
         }
-        console.log(":" + this.tottal);
     },
     shopData.countsBooks = function(){
         return this.array_elements.length;

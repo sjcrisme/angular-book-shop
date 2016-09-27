@@ -15,7 +15,7 @@
      
     }
     vm.testButton= function() {
-      //  vm.priceInCart++;
+      
     }
 
   }
