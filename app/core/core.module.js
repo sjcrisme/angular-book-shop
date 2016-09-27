@@ -52,7 +52,69 @@ app.factory('AllBooks', ['$resource',
                 this.tottal = this.tottal + this.array_elements[last].price;
             }
         }
+        console.log(":" + this.tottal);
+    },
+    shopData.countsBooks = function(){
+        return this.array_elements.length;
+    },
+    shopData.getBooks = function(){
+        return bigdata.array_elements;
+    },
+    shopData.IncreasBookCount = function(id){
+         var i,founditem = false;
+            for(i=0; i < this.array_elements.length; i++){
+                if (this.array_elements[i].id == id){
+                    this.array_elements[i].countThisBook++;
+                    //this.array_elements[i].tottal = this.array_elements[i].tottal + this.array_elements[i].price;
+                     this.tottal = this.tottal + this.array_elements[i].price;
+                    founditem = true;
+                }
+            }
+        //console.log(founditem);
+        //this.array_elements[id].countThisBook++;
+    },
+    shopData.DecreasBookCount = function(id){
+        
+        var i,founditem = false;
+            for(i=0; i < this.array_elements.length; i++){
+                if (this.array_elements[i].id == id){
+                    if(this.array_elements[i].countThisBook >1){
+                        this.array_elements[i].countThisBook--;
+                        //this.array_elements[i].tottal= this.array_elements[i].tottal - this.array_elements[i].price;
+                        this.tottal = this.tottal - this.array_elements[i].price;
+                    }
+                    founditem = true;
+                }
+            }
+        //console.log(founditem);
+        //this.array_elements[id].countThisBook--;
+    }
+    shopData.getTotal = function(){
+      return this.tottal;      
     }
 
     return shopData;
   });
+  
+  /*
+  app.factory('Invoice',['ShopCart',function(ShopCart){
+
+      var userBill = {
+       
+        data: undefined,
+
+        refresh: function () {
+            userBill.data = ShopCart.getTotal();
+        },
+        getBill:function(){
+            return this.data;
+        }
+
+    };
+
+    userBill.refresh();
+
+    return userBill;
+
+  
+  }]);*/

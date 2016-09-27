@@ -1,40 +1,23 @@
 'use strict';
 
-  function sideNavController($mdSidenav){
+  function sideNavController($mdSidenav,ShopCart){
     var vm = this;
+    window.getTotal  = vm.getTotal = ShopCart.getTotal.bind(ShopCart);
 
-    vm.priceInCart = 100;
-
+  //  vm.getTotal = Invoice;
+   
     vm.openLeftMenu = function() {
         $mdSidenav('left').toggle();
-         vm.priceInCart--;
+      //vm.priceInCart--;
+   //  Invoice.refresh();
+    //  vm.priceInCart = ShopCart.getTotal();
+     
     }
     vm.testButton= function() {
-        vm.priceInCart++;
+      //  vm.priceInCart++;
     }
 
-    //
- /*   vm.showActionToast = function() {
-
-      var toast = $mdToast.simple()
-        .textContent('You just add book "Drupal How to"')
-        .action('UNDO')
-        .highlightAction(true)
-        .highlightClass('md-accent')// Accent is used by default, this just demonstrates the usage.
-        .parent(document.getElementById('toasterplace'))
-        .position('top right');
-
-        $mdToast.show(toast).then(function(response) {
-          if ( response == 'ok' ) {
-            console.log('You clicked the \'UNDO\' action.');
-          }
-        });
-    };
-
-    vm.closeToast = function() {
-      $mdToast.hide();
-    };*/
   }
     
-angular.module('siteManager',[])
+angular.module('siteManager',['core'])
     .controller('sideNavController', sideNavController);

@@ -27,7 +27,7 @@
           <md-button class="md-icon-button" aria-label="More" ng-click="contr.showActionToast()">
             <md-icon md-svg-icon="img/ico/ic_local_grocery_store_white_24px.svg"></md-icon>
           </md-button>
-          {{contr.priceInCart}} (USD)
+          {{contr.getTotal()}} (USD)
           <span flex=""></span>
         </div>
               
@@ -35,7 +35,7 @@
 
       <div id="sideNavContainer">
          <md-sidenav md-component-id="left" class="md-sidenav-left"> <!-- left block -->
-          <md-subheader class="md-no-sticky">{{contr.priceInCart}} line item (with hover)</md-subheader>
+          <md-subheader class="md-no-sticky">{{contr.getTotal()}} line item (with hover)</md-subheader>
            <md-list flex>
               <md-subheader class="md-no-sticky">Left bar</md-subheader>
                   this is left bar<br>

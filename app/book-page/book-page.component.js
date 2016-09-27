@@ -37,7 +37,7 @@ function bookPage(){
 //
      vm.currentPage = 0;
 //
-          vm.showActionToast = function(name,price) {
+          vm.showActionToast = function(name,price,id) {
 
             var toast = $mdToast.simple()
               .textContent(name + ' + ' + price + ' USD')
@@ -49,7 +49,7 @@ function bookPage(){
 
               $mdToast.show(toast).then(function(response) {
                 if ( response == 'ok' ) {
-                  console.log('You clicked the \'UNDO\' action.');
+                  console.log('You \'UNDO\' book id:'+ id +' action.');
                 }
               });
           };
@@ -74,7 +74,7 @@ function bookPage(){
                          price:this.book.price
                      });
                      $mdDialog.hide(answer);
-                     vm.showActionToast(book.name,book.price);
+                     vm.showActionToast(book.name,book.price,book.id);
                  }
                  vmDialog.answer = function(answer) {
            //          console.log('> '+ answer);
