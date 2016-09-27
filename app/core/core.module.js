@@ -58,7 +58,7 @@ app.factory('AllBooks', ['$resource',
         return this.array_elements.length;
     },
     shopData.getBooks = function(){
-        return bigdata.array_elements;
+        return shopData.array_elements;
     },
     shopData.IncreasBookCount = function(id){
          var i,founditem = false;

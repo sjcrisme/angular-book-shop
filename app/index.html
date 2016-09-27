@@ -38,15 +38,22 @@
           <md-subheader class="md-no-sticky">{{contr.getTotal()}} line item (with hover)</md-subheader>
            <md-list flex>
               <md-subheader class="md-no-sticky">Left bar</md-subheader>
-                  this is left bar<br>
-                  this is left bar<br>
-                  this is left bar<br>
-                  this is left bar<br>
-                  this is left bar<br>
-<br>
-                  this is left bar<br>
-                  this is left bar<br>
-                  this is left bar<br>
+              <!-- -->
+                <md-list-item class="md-3-line" ng-repeat="book in contr.getBooks()" >
+                  <img ng-src="img/{{book.img}}?{{$index}}" class="md-avatar" alt="{{book.name}}" ng-click="null" />
+                  <div class="md-list-item-text" layout="column">
+                    <h3>{{ book.name }}</h3>
+                    <p>{{  book.desc }}</p>
+                    <label>Price this book: {{ book.price}} (USD)</label>
+                    <div ng-controller="additemshopcart as addit">
+                      <label>Count {{ book.countThisBook }} </label>
+                      <md-button class="md-raised" ng-click="addit.addmore(book.id)">+</md-button>
+                      <md-button class="md-raised" ng-click="addit.removeone(book.id)">-</md-button>
+                    </div>
+
+                  </div>
+
+              </md-list-item>
                    <md-button ng-click="contr.testButton()">+</md-button>
            </md-list> <!-- end flex -->
          </md-sidenav> <!--//end left block -->
