@@ -49,6 +49,7 @@ function bookPage(){
 
               $mdToast.show(toast).then(function(response) {
                 if ( response == 'ok' ) {
+                  ShopCart.Undo(id);
                   console.log('You \'UNDO\' book id:'+ id +' action.');
                 }
               });

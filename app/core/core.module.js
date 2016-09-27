@@ -92,6 +92,17 @@ app.factory('AllBooks', ['$resource',
     shopData.getTotal = function(){
       return this.tottal;      
     }
+    shopData.Undo = function(id){
+        var i;
+         for(i=0; i < this.array_elements.length; i++){
+                if (this.array_elements[i].id == id){
+                    this.array_elements[i].countThisBook--;
+                    //this.array_elements[i].tottal= this.array_elements[i].tottal - this.array_elements[i].price;
+                    this.tottal = this.tottal - this.array_elements[i].price;
+                    break;
+                }
+            }
+    }
 
     return shopData;
   });
