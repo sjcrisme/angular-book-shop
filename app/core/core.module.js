@@ -99,7 +99,7 @@ app.factory('AllBooks', ['$resource',
                     this.array_elements[i].countThisBook--;
                     //this.array_elements[i].tottal= this.array_elements[i].tottal - this.array_elements[i].price;
                     this.tottal = this.tottal - this.array_elements[i].price;
-                    break;
+                    shopData.array_elements.splice(i, 1);
                 }
             }
     }
